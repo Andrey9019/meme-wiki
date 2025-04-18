@@ -26,7 +26,7 @@ import { Meme } from "@/types/index";
 import { defaultMemes } from "@/data/memes";
 import { title } from "@/components/primitives";
 
-export const columns = [
+const columns = [
   { name: "NAME", uid: "name" },
   { name: "URL IMAGE", uid: "image" },
   { name: "LIKES", uid: "likes" },
@@ -215,94 +215,3 @@ export default function App() {
     </>
   );
 }
-
-// export default function App() {
-
-//
-
-//   return (
-//     <div>
-//       <section className="min-h-screen px-4">
-//         <h1 className="mb-6 text-2xl font-bold text-center">Meme Table</h1>
-
-//         <Table
-//           aria-label="meme-table"
-//           className="mx-auto border border-gray-200 rounded-xl max-w-7xl "
-//         >
-//           <TableHeader columns={columns} className="">
-//             {(column) => (
-//               <TableColumn key={column.uid} className="border border-gray-200 ">
-//                 {column.name}
-//               </TableColumn>
-//             )}
-//           </TableHeader>
-//           <TableBody items={memes} className="">
-//             {(item: Meme) => (
-//               <TableRow key={item.id} className="">
-//                 {(columnKey) => (
-//                   <TableCell className="p-2 ">
-//                     {renderCell(item, columnKey)}
-//                   </TableCell>
-//                 )}
-//               </TableRow>
-//             )}
-//           </TableBody>
-//         </Table>
-//       </section>
-
-//       <EditMemeModal
-//         isOpen={isOpen}
-//         onOpenChange={onOpenChange}
-//         selectedMeme={selectedMeme}
-//         handleChange={handleChange}
-//         handleSave={handleSave}
-//       />
-//       {/* <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-//         <ModalContent className="">
-//           {(onClose) => (
-//             <>
-//               <ModalHeader className="">Modal Title</ModalHeader>
-//               <ModalBody className="">
-//                 <p className="">ID: {selectedMeme?.id}</p>
-//                 <Input
-//                   label="Title"
-//                   variant="bordered"
-//                   minLength={3}
-//                   maxLength={100}
-//                   isRequired
-//                   value={selectedMeme?.title ?? ""}
-//                   onChange={(e) => handleChange("title", e.target.value)}
-//                 />
-//                 <Input
-//                   label="Image URL"
-//                   variant="bordered"
-//                   isRequired
-//                   value={selectedMeme?.image_url ?? ""}
-//                   onChange={(e) => handleChange("image_url", e.target.value)}
-//                 />
-//                 <Input
-//                   label="Likes"
-//                   type="number"
-//                   variant="bordered"
-//                   isRequired
-//                   value={selectedMeme?.likes.toString() ?? "0"}
-//                   min={0}
-//                   max={99}
-//                   onChange={(e) => handleChange("likes", e.target.value)}
-//                 />
-//               </ModalBody>
-//               <ModalFooter className="">
-//                 <Button onPress={onClose} color="danger" variant="light">
-//                   Cancel
-//                 </Button>
-//                 <Button onPress={handleSave} color="primary">
-//                   Save
-//                 </Button>
-//               </ModalFooter>
-//             </>
-//           )}
-//         </ModalContent>
-//       </Modal> */}
-//     </div>
-//   );
-// }
